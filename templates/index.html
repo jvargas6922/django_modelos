@@ -1,0 +1,10 @@
+{% extends "./layouts/base.html" %}
+
+{% block title %}
+    Index
+{% endblock  %}
+
+{% block content %}
+    <h1>Pagina principal</h1>
+    <a href=" {% url "index_persona" %} ">pagina Persona</a>
+{% endblock  %}

@@ -1,0 +1,40 @@
+{% extends "../layouts/base.html" %}
+
+{% block title %}
+    Persona
+{% endblock  %}
+
+{% block content %}
+    <h1>Pagina Persona</h1>
+    <a href=" {% url "index" %} ">pagina Index</a>
+    <a href="{% url "create_persona" %}">crear persona</a>
+    <table>
+        <thead>
+            <th>#</th>
+            <th>nombre</th>
+            <th>apellido</th>
+            <th>correo</th>
+            <th>edad</th>
+        </thead>
+        <tbody>
+            {% for persona in personas  %}
+            <tr>
+                <td>{{ persona.id }}</td>
+                <td>{{ persona.name }}</td>
+                <td>{{ persona.last_name }}</td>
+                <td>{{ persona.email }}</td>
+                <td>{{ persona.age }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% comment %} <ul>
+        {% for persona in personas  %}
+            <li> nombre:    {{ persona.name }} </li>
+            <li> apellido:  {{ persona.last_name }} </li>
+            <li> correo:    {{ persona.email }} </li>
+            <li> edad:      {{ persona.age }} </li>
+            <hr>
+        {% endfor %}
+    </ul> {% endcomment %}
+{% endblock  %}
